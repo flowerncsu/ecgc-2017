@@ -16,9 +16,12 @@ class MonsterType(models.Model):
             (50, 'huge'),
         )
     )
-    common_drops = models.ManyToManyField('items.Item', reverse_name='drops_common')
-    uncommon_drops = models.ManyToManyField('items.Item', reverse_name='drops_uncommon')
-    rare_drops = models.ManyToManyField('items.Item', reverse_name='drops_rare')
+    common_drops = models.ManyToManyField('items.Item', related_name='drops_common')
+    uncommon_drops = models.ManyToManyField('items.Item', related_name='drops_uncommon')
+    rare_drops = models.ManyToManyField('items.Item', related_name='drops_rare')
+
+    def __str__(self):
+        return self.name
 
 
 class Monster(models.Model):

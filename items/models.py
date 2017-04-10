@@ -7,3 +7,4 @@ class Item(models.Model):
 
 class InventoryListing(models.Model):
     item = models.ForeignKey(Item)
+    owner = models.ForeignKey('accounts.Player', related_name='inventory')
