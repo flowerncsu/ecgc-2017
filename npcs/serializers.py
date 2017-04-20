@@ -1,21 +1,21 @@
-from .models import Monster, MonsterType
+from .models import Character, CharacterType
 from rest_framework import serializers
 
 
-class MonsterSerializer(serializers.ModelSerializer):
+class CharacterSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Monster
+        model = Character
         fields = (
             'created',
             'id',
-            'monster_type',
+            'character_type',
             'url',
         )
 
 
-class MonsterTypeSerializer(serializers.ModelSerializer):
+class CharacterTypeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MonsterType
+        model = CharacterType
         fields = (
             'name',
             'fightable',

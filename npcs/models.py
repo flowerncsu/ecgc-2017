@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class MonsterType(models.Model):
+class CharacterType(models.Model):
     name = models.CharField(max_length=100)
     fightable = models.BooleanField(default=True)
     xp = models.IntegerField(null=True, blank=True)
@@ -24,12 +24,12 @@ class MonsterType(models.Model):
         return self.name
 
 
-class Monster(models.Model):
-    monster_type = models.ForeignKey(MonsterType)
+class Character(models.Model):
+    character_type = models.ForeignKey(CharacterType)
     created = models.DateTimeField(default=timezone.now)
 
     @property
     def drops(self):
         """This function will return the items dropped once items are implemented"""
         drops = []
-        return None
+        return drops

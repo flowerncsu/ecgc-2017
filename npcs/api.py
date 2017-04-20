@@ -1,19 +1,19 @@
 from rest_framework import viewsets
-from .models import Monster, MonsterType
-from .serializers import MonsterSerializer, MonsterTypeSerializer
+from .models import Character, CharacterType
+from .serializers import CharacterSerializer, CharacterTypeSerializer
 
 
-class MonsterViewSet(viewsets.ModelViewSet):
+class CharacterViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows monsters to be viewed or edited.
+    API endpoint that allows characters to be viewed or edited.
     """
-    queryset = Monster.objects.all()
-    serializer_class = MonsterSerializer
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer
 
 
-class MonsterTypeViewSet(viewsets.ModelViewSet):
+class CharacterTypeViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows monster types to be viewed or edited.
+    API endpoint that allows character types to be viewed or edited.
     """
-    queryset = MonsterType.objects.all()
-    serializer_class = MonsterTypeSerializer
+    queryset = CharacterType.objects.all()
+    serializer_class = CharacterTypeSerializer
